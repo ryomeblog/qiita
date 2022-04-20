@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 付加情報 -->
+
+        <!-- タイトル -->
+        <title>JavaScriptの説明</title>
+
+        <!-- 文字コードの指定 -->
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <!-- コンテンツ -->
+
+        <!-- インラインスクリプト -->
+        <script type="text/javascript">
+            //変数
+            var str = "a1ab12abc123abcd1234";
+
+            //文字列の抽出(数値)　変数名.match(/\d{ 桁数以上 , 桁数以下 }/g);
+            //文字列の抽出(文字)　変数名.match(/[ 開始文字列 - 終了文字列] /g);
+            var result = str.match(/\d{2,4}/g);
+            var result2 = str.match(/[A-z]/g);
+
+            //ドキュメントの出力を開始
+            document.open();
+
+            //ドキュメントに文字列を書き出す
+            document.write(str);
+            document.write('<br/>');
+            for(r in result){
+                document.write(result[r]);
+                document.write('<br/>');
+            };
+            document.write('<br/>');
+            for(r in result2){
+                document.write(result2[r]);
+                document.write('<br/>');
+            };
+
+            //ドキュメントの出力を終了
+            document.close();
+
+        </script>
+    </body>
+</html>

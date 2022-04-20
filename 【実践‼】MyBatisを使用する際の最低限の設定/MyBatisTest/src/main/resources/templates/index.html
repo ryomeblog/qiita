@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+  <head>
+    <title>Test</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <ul>
+      <li th:each="entity : ${Test}">
+        [[${entity.getId()}]]
+        [[${entity.getName()}]]
+      </li>
+    </ul>
+  </body>
+</html>

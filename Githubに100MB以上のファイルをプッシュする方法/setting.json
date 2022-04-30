@@ -1,0 +1,8 @@
+{
+  "setting": "t2z",
+  "encoding": "shift_jis",
+  "input": "./input/",
+  "output": "./output/",
+  "byte": "51380224",
+  "コメント": "setting：zipファイルをテキストファイルに変換する際は「z2t」、テキストファイルをzipファイルに変換する際は「t2z」、encoding：文字コード、inputは入力対象ディレクトリのパス、outputは出力対象ディレクトリのパス、byte：テキストファイル出力時の分割サイズ、ファイル名：「in.zip」または「in.txt」"
+}

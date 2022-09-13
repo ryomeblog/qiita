@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  app:
+    build: ./app
+    container_name: tmp-spring-boot
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_USER=testUser
+      - POSTGRES_PASSWORD=testPassword
+      - POSTGRES_URL=jdbc:postgresql://db:5432/test
+  db:
+    image: postgres:14
+    container_name: test-postgres
+    ports:
+      - 15432:5432
+    volumes:
+      - db-store:/var/lib/postgresql/data
+      - ./init/sql:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=testUser
+      - POSTGRES_PASSWORD=testPassword
+      - POSTGRES_DB=test
+  swagger-editor:
+    image: swaggerapi/swagger-editor
+    container_name: "swagger-editor"
+    ports:
+      - "8001:8080"
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: "swagger-ui"
+    ports:
+      - "8002:8080"
+    volumes:
+      - ./swagger/swagger.v1.yml:/openapi.yml
+    environment:
+      SWAGGER_JSON: /openapi.yml
+  swagger-api:
+    image: stoplight/prism:3
+    container_name: "swagger-api"
+    ports:
+      - "8003:4010"
+    command: mock -h 0.0.0.0 /openapi.yml
+    volumes:
+      - ./swagger/swagger.v1.yml:/openapi.yml
+volumes:
+  db-store:

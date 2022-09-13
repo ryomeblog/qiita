@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="testMyBatis" targetRuntime="MyBatis3">
+
+    <!-- DB接続先 -->
+    <jdbcConnection driverClass="org.postgresql.Driver"
+      connectionURL="jdbc:postgresql://localhost:15432/test"
+      userId="testUser" password="testPassword">
+    </jdbcConnection>
+
+    <!-- DTO -->
+    <javaModelGenerator
+      targetPackage="com.example.tmpSpringBoot.dto.generator"
+      targetProject="tmpSpringBoot/src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- Mapper xml -->
+    <sqlMapGenerator targetPackage="com.example.tmpSpringBoot.dao.generator"
+      targetProject="tmpSpringBoot/src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- Mapper -->
+    <javaClientGenerator type="XMLMAPPER"
+      targetPackage="com.example.tmpSpringBoot.dao.generator"
+      targetProject="tmpSpringBoot/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- テーブル -->
+    <table tableName="user_mst"
+      enableInsert="true" enableSelectByPrimaryKey="true"
+      enableSelectByExample="false" enableUpdateByPrimaryKey="true"
+      enableUpdateByExample="false" enableDeleteByPrimaryKey="true"
+      enableDeleteByExample="false" enableCountByExample="false"
+      selectByExampleQueryId="false" modelType="flat">
+    </table>
+    <table tableName="common_mst"
+      enableInsert="true" enableSelectByPrimaryKey="true"
+      enableSelectByExample="false" enableUpdateByPrimaryKey="true"
+      enableUpdateByExample="false" enableDeleteByPrimaryKey="true"
+      enableDeleteByExample="false" enableCountByExample="false"
+      selectByExampleQueryId="false" modelType="flat">
+    </table>
+
+  </context>
+</generatorConfiguration>

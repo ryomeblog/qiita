@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<title>テーブル定義書&#32;TmpSpringBoot</title>
+		<link rel="stylesheet" href="a5m2.css">
+	</head>
+	<body>
+	<table border="1">
+		<caption>テーブル情報</caption>
+			<colgroup>
+				<col width="115">
+				<col width="180">
+				<col width="115">
+				<col width="180">
+			</colgroup>
+			<th>システム名</th>
+			<td>TmpSpringBoot&nbsp;</td>
+			<th>作成者</th>
+			<td>ryome&nbsp;</td>
+		</tr>
+		<tr>
+			<th>サブシステム名</th>
+			<td>&nbsp;</td>
+			<th>作成日</th>
+			<td>2022/09/14&nbsp;</td>
+		</tr>
+		<tr>
+			<th>スキーマ名</th>
+			<td>public&nbsp;</td>
+			<th>更新日</th>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th>論理テーブル名</th>
+			<td>汎用マスタ&nbsp;</td>
+			<th>RDBMS&nbsp;</th>
+			<td>PostgreSQL 14.5 (Debian 14.5-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit 14.5&nbsp;</td>
+		</tr>
+		<tr>
+			<th>物理テーブル名</th>
+			<td>common_mst&nbsp;</td>
+			<th>&nbsp;</th>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="4"><b>備考</b><br></td>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>カラム情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="120">
+				<col width="120">
+				<col width="100">
+				<col width="60">
+				<col width="60">
+				<col width="100">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>論理名</th>
+			<th>物理名</th>
+			<th>データ型</th>
+			<th>Not Null</th>
+			<th>デフォルト</th>
+			<th>備考</th>
+		</tr>
+		<tr>
+			<td style="text-align:right;">1</td>
+			<td>汎用マスタID</td>
+			<td>common_id</td>
+			<td>character&#32;varying(7)</td>
+			<td>Yes (PK)</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">2</td>
+			<td>汎用マスタグループ</td>
+			<td>common_group</td>
+			<td>character&#32;varying(100)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">3</td>
+			<td>汎用マスタ名</td>
+			<td>common_name</td>
+			<td>character&#32;varying(200)</td>
+			<td>Yes</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">4</td>
+			<td>汎用マスタ値</td>
+			<td>common_value1</td>
+			<td>character&#32;varying(200)</td>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">5</td>
+			<td>汎用マスタ値</td>
+			<td>common_value2</td>
+			<td>character&#32;varying(200)</td>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">6</td>
+			<td>更新日時</td>
+			<td>update_datetime</td>
+			<td>date</td>
+			<td>Yes</td>
+			<td>CURRENT_TIMESTAMP</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">7</td>
+			<td>バージョン</td>
+			<td>version</td>
+			<td>smallint</td>
+			<td>Yes</td>
+			<td>0</td>
+			<td></td>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>インデックス情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="230">
+				<col width="60">
+				<col width="100">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>インデックス名</th>
+			<th>カラムリスト</th>
+			<th>ユニーク</th>
+			<th>備考</th>
+		</tr>
+		<tr>
+			<td style="text-align:right;">1</td>
+			<td>common_mst_pkey</td>
+			<td>common_id</td>
+			<td>Yes</td>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>制約情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="170">
+				<col width="90">
+				<col width="300">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>制約名</th>
+			<th>種類</th>
+			<th>制約定義</th>
+		</tr>
+		<tr>
+			<td style="text-align:right;">1</td>
+			<td>2200_16395_1_not_null</td>
+			<td>CHECK</td>
+			<td>common_id&#32;IS&#32;NOT&#32;NULL</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">2</td>
+			<td>2200_16395_2_not_null</td>
+			<td>CHECK</td>
+			<td>common_group&#32;IS&#32;NOT&#32;NULL</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">3</td>
+			<td>2200_16395_3_not_null</td>
+			<td>CHECK</td>
+			<td>common_name&#32;IS&#32;NOT&#32;NULL</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">4</td>
+			<td>2200_16395_6_not_null</td>
+			<td>CHECK</td>
+			<td>update_datetime&#32;IS&#32;NOT&#32;NULL</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">5</td>
+			<td>2200_16395_7_not_null</td>
+			<td>CHECK</td>
+			<td>version&#32;IS&#32;NOT&#32;NULL</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">6</td>
+			<td>common_mst_pkey</td>
+			<td>PRIMARY&#32;KEY</td>
+			<td>common_id</td>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>外部キー情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="120">
+				<col width="160">
+				<col width="120">
+				<col width="160">
+			</colgroup>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照先</th>
+			<th>参照先カラムリスト</th>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>外部キー情報(PK側)</caption>
+			<colgroup>
+				<col width="30">
+				<col width="120">
+				<col width="160">
+				<col width="120">
+				<col width="160">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>外部キー名</th>
+			<th>カラムリスト</th>
+			<th>参照元</th>
+			<th>参照元カラムリスト</th>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>トリガー情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="120">
+				<col width="160">
+				<col width="120">
+				<col width="160">
+			</colgroup>
+			<th>No.</th>
+			<th>トリガー名</th>
+			<th>イベント</th>
+			<th>タイミング</th>
+			<th>条件</th>
+		</tr>
+	</table>
+
+<br>
+<br>
+	<table border="1">
+		<caption>RDBMS固有の情報</caption>
+			<colgroup>
+				<col width="30">
+				<col width="220">
+				<col width="340">
+			</colgroup>
+		<tr>
+			<th>No.</th>
+			<th>プロパティ名</th>
+			<th>プロパティ値</th>
+		</tr>
+		<tr>
+			<td style="text-align:right;">1</td>
+			<td>schemaname</td>
+			<td>public</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">2</td>
+			<td>tablename</td>
+			<td>common_mst</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">3</td>
+			<td>tableowner</td>
+			<td>testUser</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">4</td>
+			<td>tablespace</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">5</td>
+			<td>hasindexes</td>
+			<td>True</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">6</td>
+			<td>hasrules</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">7</td>
+			<td>hastriggers</td>
+			<td>False</td>
+		</tr>
+		<tr>
+			<td style="text-align:right;">8</td>
+			<td>rowsecurity</td>
+			<td>False</td>
+		</tr>
+	</table>
+
+
+	</body>
+</html>

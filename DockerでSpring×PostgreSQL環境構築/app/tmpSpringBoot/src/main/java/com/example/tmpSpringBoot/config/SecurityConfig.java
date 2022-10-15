@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 SIGNUP,
                 QUESTION)
         .permitAll() // 直リンクOK
-        .antMatchers(SEARCH).hasAuthority(ROLE_ADMIN) //管理者ユーザに許可
+        .antMatchers(SEARCH, ACCOUNT_LOCK).hasAuthority(ROLE_ADMIN) //管理者ユーザに許可
         .antMatchers(HttpMethod.OPTIONS,"/**").permitAll() // プリフライトリクエストの許可
         .anyRequest().authenticated() //それ以外は直リンク禁止
         .and().csrf().disable(); // CSRFを無効

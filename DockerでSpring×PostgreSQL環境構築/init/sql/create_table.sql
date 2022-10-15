@@ -94,6 +94,29 @@ VALUES
 	);
 
 INSERT INTO
+	user_mst(
+		user_id,
+		password,
+		user_name,
+		secret_id,
+		secret_answer,
+		error_password,
+		lock,
+		authority
+	)
+VALUES
+	(
+		'user00000002',
+		'$2a$10$m5CzxWKChQWZd464NOHLueG.sgoEfMASNwRZ6pQmN.k2wkFpiAHaS',
+		'test',
+		'com0001',
+		'$2a$10$m5CzxWKChQWZd464NOHLueG.sgoEfMASNwRZ6pQmN.k2wkFpiAHaS',
+		'0',
+		'FALSE',
+		'1'
+	);
+
+INSERT INTO
 	common_mst(
 		common_id,
 		common_group,

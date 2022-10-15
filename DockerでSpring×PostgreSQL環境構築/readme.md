@@ -1,5 +1,29 @@
 # DockerでSpring×PostgreSQL環境構築
 
+## 資材取得
+
+- 実行コマンド
+```
+git clone https://github.com/ryomeblog/docker-spring-psql
+cd docker-spring-psql
+```
+
+- 実行例
+```
+$ git clone https://github.com/ryomeblog/docker-spring-psql
+Cloning into 'docker-spring-psql'...
+remote: Enumerating objects: 120, done.
+remote: Counting objects: 100% (120/120), done.
+remote: Compressing objects: 100% (71/71), done.
+remote: Total 120 (delta 33), reused 120 (delta 33), pack-reused 0
+Receiving objects: 100% (120/120), 61.34 KiB | 2.27 MiB/s, done.
+Resolving deltas: 100% (33/33), done.
+$ cd docker-spring-psql
+~/docker-spring-psql$
+```
+
+## サービス実行
+
 - 実行コマンド
 ```
 docker-compose up -d

@@ -1,0 +1,259 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "1e2fab49-1012-44e9-a326-cb338e9bc623",
+        "name": "Microsoft Graph API"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": [
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "grant_type",
+                    "value": "client_credentials"
+                  },
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "scope",
+                    "value": "https://graph.microsoft.com/.default"
+                  },
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "client_id",
+                    "value": "【アプリケーション (クライアント)】"
+                  },
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "client_secret",
+                    "value": "【値（クライアントシークレット）】"
+                  }
+                ]
+              },
+              "bodyType": "Form"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "secure": true,
+                "name": "https",
+                "version": "V11"
+              },
+              "host": "login.microsoftonline.com",
+              "path": "/【ディレクトリ (テナント) ID】/oauth2/v2.0/token"
+            },
+            "id": "991bdafb-b3be-4d40-8994-7e8d4c986887",
+            "name": "アクセストークン取得",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"accountEnabled\": true,\n  \"displayName\": \"表示名\",\n  \"givenName\":\"名\",\n  \"surname\":\"姓\",\n  \"mailNickname\": \"test-user\",\n  \"officeLocation\":\"勤務先\",\n  \"jobTitle\":\"役職\",\n  \"userPrincipalName\": \"test-user@【プライマリ ドメイン】\",\n  \"passwordProfile\" : {\n    \"forceChangePasswordNextSignIn\": true,\n    \"password\": \"xWwvJ]6NMw+bWH-d\"\n  }\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "secure": true,
+                "name": "https",
+                "version": "V11"
+              },
+              "host": "graph.microsoft.com",
+              "path": "/v1.0/users"
+            },
+            "id": "627e2073-7732-401c-8fc6-71dc14be53bc",
+            "name": "ユーザー作成",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer 【access_token】"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+              "name": "DELETE"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "secure": true,
+                "name": "https",
+                "version": "V11"
+              },
+              "host": "graph.microsoft.com",
+              "path": "/v1.0/users/【id | userPrincipalName】"
+            },
+            "id": "eff0ede6-2d72-4586-a7c8-88243851ffa5",
+            "name": "ユーザー削除",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer 【access_token】"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "secure": true,
+                "name": "https",
+                "version": "V11"
+              },
+              "host": "graph.microsoft.com",
+              "path": "/v1.0/users/【id | userPrincipalName】"
+            },
+            "id": "eded8186-0ff5-450b-9678-b111630ec7ef",
+            "name": "ユーザー取得",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer 【access_token】"
+              }
+            ]
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc5789",
+              "name": "PATCH"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text",
+              "textBody": "{\n  \"displayName\": \"更新\"\n}"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "secure": true,
+                "name": "https",
+                "version": "V11"
+              },
+              "host": "graph.microsoft.com",
+              "path": "/v1.0/users/【id | userPrincipalName】"
+            },
+            "id": "e05557ac-0913-479f-808e-ca3a63ef75af",
+            "name": "ユーザー更新",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "enabled": true,
+                "name": "Authorization",
+                "value": "Bearer 【access_token】"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

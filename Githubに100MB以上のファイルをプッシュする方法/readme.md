@@ -22,7 +22,7 @@ Pythonで実装したコードが以下です。
 └─output
 ```
 
-### コード
+### コード（main.py）
 ```python:main.py
 import base64
 import json
@@ -67,6 +67,8 @@ if __name__ == "__main__":
         with open(output_path, "wb") as f:
             f.write(base64.b64decode(file_txt))
 ```
+
+### setting.json
 
 ```json:setting.json
 {

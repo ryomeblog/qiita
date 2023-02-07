@@ -93,24 +93,42 @@ if __name__ == "__main__":
 
 ### ZIPファイル ⇒ テキストファイル
 1. ZIPファイルを「`in.zip`」という名前で `input` のディレクトリパスに配置する。
+
 ![01.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/894d0a78-8389-71ea-a462-3c5cb9a4eda2.png)
+
 2. `setting.json` の `setting` の値を `z2t` にする。
+
 ![02.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/7851a5ac-0428-fe2c-8bee-12768c3c672b.png)
+
 3. `main.py` を実行する。
+
 ![03.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/7a225225-4ff4-3413-089f-945951ba61ca.png)
+
 4. `output` のディレクトリパスにテキストファイルができていれば成功。
+
 ![04.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/681e168d-d34f-4580-40b8-c68486fa12dc.png)
+
 5. 作成されたテキストファイルをGitHubにプッシュする。
+
 ![07.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/4be9dd06-f623-8a3c-17f4-8728bf15915b.png)
 
 ### テキストファイル ⇒ ZIPファイル
 1. GitHubからテキストファイルを落としてくる。
+
 ![07.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/4be9dd06-f623-8a3c-17f4-8728bf15915b.png)
+
 2. テキストファイルを `input` のディレクトリパスに配置する。
+
 ![04.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/681e168d-d34f-4580-40b8-c68486fa12dc.png)
+
 3. `setting.json` の `setting` の値を `t2z` にする。
+
 ![05.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/029889cf-0964-df27-e2cb-91815f1ee33a.png)
+
 4. `main.py` を実行する。
+
 ![03.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/7a225225-4ff4-3413-089f-945951ba61ca.png)
+
 5. `output` のディレクトリパスに「`out.zip`」ができていれば成功。
+
 ![06.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/449867/17b69815-b59d-0663-70b2-1f63b2cf0de5.png)

@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "title": "lorem",
+      "id": 1
+    },
+    {
+      "title": "testlorem",
+      "id": 2
+    },
+    {
+      "title": "test2",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
